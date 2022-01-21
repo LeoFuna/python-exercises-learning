@@ -12,3 +12,11 @@ def media_aritmetica(lista):
         total += valor
     return total / len(lista)
 
+
+# 3 - Faça um programa que, dado um valor n qualquer, tal que n > 1 , imprima na tela um quadrado feito de asteriscos de lado de tamanho n
+def forma_retangulo(numero):
+    for index in range(numero):
+        print(numero * "*")
+
+
+forma_retangulo(5)
