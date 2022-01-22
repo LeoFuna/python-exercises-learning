@@ -1,4 +1,7 @@
 # 1 - Crie uma função que receba dois números e retorne o maior deles.
+import math
+
+
 def retorna_maior(num1, num2):
     if num1 < num2:
         return num2
@@ -26,3 +29,13 @@ def retorna_maior_nome(lista_nomes):
             maior_nome = nome
     return maior_nome
 
+# 5 -  Considere que a cobertura da tinta é de 1 litro para cada 3 metros quadrados e que a tinta é vendida em latas de 18 litros, que custam R$ 80,00.
+# Crie uma função que retorne dois valores em uma tupla contendo a quantidade de latas de tinta a serem compradas e o preço total a partir do tamanho de uma parede(em m²).
+def informa_tinta(tamanho_parede):
+    preco_lata = 80
+    litros_necessarios = math.ceil(tamanho_parede / 3)
+    latas = math.ceil(litros_necessarios / 18)
+    tupla = (latas, latas * preco_lata)
+    return tupla
+
+print(informa_tinta(55))
