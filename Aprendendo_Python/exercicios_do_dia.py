@@ -16,3 +16,13 @@ def media_aritmetica(lista):
 def forma_retangulo(numero):
     for index in range(numero):
         print(numero * '*')
+
+# 4 - Crie uma função que receba uma lista de nomes e retorne o nome com a maior quantidade de caracteres.
+# Por exemplo, para ["José", "Lucas", "Nádia", "Fernanda", "Cairo", "Joana"] , o retorno deve ser "Fernanda" 
+def retorna_maior_nome(lista_nomes):
+    maior_nome = lista_nomes[0]
+    for nome in lista_nomes:
+        if len(nome) > len(maior_nome):
+            maior_nome = nome
+    return maior_nome
+
