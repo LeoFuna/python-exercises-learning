@@ -22,6 +22,9 @@ class SalesReport(ABC):
     def serialize(self):
         raise NotImplementedError
 
+    def get_length(self):
+        return 'Chamando'
+
 class SalesReportJSON(SalesReport):
     def serialize(self):
         with open(self.export_file + '.json', 'w') as file:
@@ -40,5 +43,4 @@ class SalesReportCSV(SalesReport):
 relatorio_csv = SalesReportCSV('meu_relatorio')
 relatorio_json = SalesReportJSON('meu_relatorio_json')
 
-relatorio_csv.serialize()
-relatorio_json.serialize()
+sales = SalesReport('meu_teste')
