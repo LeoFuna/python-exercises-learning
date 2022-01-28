@@ -1,4 +1,7 @@
 # Exercicio 1
+from abc import abstractmethod
+
+
 class Tv():
     def __init__(self, tamanho):
         self.__volume = 50
@@ -52,4 +55,48 @@ class Estatistica:
             else:
                 dicionario[numero] = 1
         return max(dicionario, key=dicionario.get)
+
+#Exercicio 3
+from abc import ABC, abstractmethod
+
+class FiguraGeometrica(ABC):
+    
+    @abstractmethod
+    def area(self):
+        raise NotImplementedError
+
+    @abstractmethod
+    def perimetro(self):
+        raise NotImplementedError
+
+class Quadrado(FiguraGeometrica):
+    def __init__(self, lado):
+        self.lado = lado
+
+    def area(self):
+        return self.lado ** 2
+
+    def perimetro(self):
+        return self.lado * 4
+
+class Retangulo(FiguraGeometrica):
+    def __init__(self, base, altura):
+        self.base = base
+        self.altura = altura
+    
+    def area(self):
+        return self.altura + self.base
+    
+    def perimetro(self):
+        return self.altura * 2 + self.base * 2
+
+class Circulo(FiguraGeometrica):
+    def __init__(self, raio):
+        self.raio = raio
+    
+    def area(self):
+        return 3.14 * (self.raio **2)
+
+    def perimetro(self):
+        return 2 * 3.14 * self.raio
 
